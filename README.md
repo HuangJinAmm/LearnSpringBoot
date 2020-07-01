@@ -1,2 +1,1 @@
-# LearnSpringBoot
-记录学习过程
+记录学习Rust的过程
