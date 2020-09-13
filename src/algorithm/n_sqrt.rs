@@ -1,4 +1,3 @@
-use std::ops::{Add,Div};
 fn good_enuough(guess:f64,x:f64) ->bool{
     let diff = guess*guess - x ;
     if diff.abs() < 0.00001f64{

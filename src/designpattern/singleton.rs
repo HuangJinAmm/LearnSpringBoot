@@ -1,6 +1,5 @@
-use std::sync::{Arc,Mutex,Once,ONCE_INIT};
-use std::time::Duration;
-use std::{mem,thread};
+use std::sync::{Arc,Mutex,Once};
+use std::{mem};
 
 #[derive(Debug)]
 struct World {
@@ -18,7 +17,23 @@ impl World {
     }
 }
 
-#[derive(Debug)]
+#[derive(Debug,Clone)]
 struct SingletonReader {
-    inner: Arc<Mutex<Wrold>>
+    inner: Arc<Mutex<World>>
+}
+
+fn singleton() -> SingletonReader {
+    static mut SINGLETON: *const SingletonReader = 0 as *const SingletonReader;
+    static ONCE: Once = Once::new();
+
+    unsafe {
+        ONCE.call_once(||{
+            let singleton = SingletonReader{
+                inner: Arc::new(Mutex::new(World{area:0,population:0}))
+            };
+
+            SINGLETON = mem::transmute(Box::new(singleton));
+        });
+        (*SINGLETON).clone()
+    }
 }
