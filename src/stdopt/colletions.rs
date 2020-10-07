@@ -13,6 +13,7 @@ mod tests{
         }
     }
 
+    #[allow(non_snake_case)]
     #[test]
     fn test_BTreeMap() {
         use std::collections::btree_map::BTreeMap;

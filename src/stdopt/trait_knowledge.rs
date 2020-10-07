@@ -1,3 +1,4 @@
+#![allow(dead_code)]
 trait Animal {
     fn name(&self)->&'static str;
 

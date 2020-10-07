@@ -32,7 +32,7 @@ pub(crate) fn n_queen(size:usize){
 }
 
 #[cfg(test)]
-mod test {
+mod tests {
 
     use super::*;
 
