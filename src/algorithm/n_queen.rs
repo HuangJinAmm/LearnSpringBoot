@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+
 fn do_n_queen(count:&mut u32, size:usize,level:usize,mut q:[u32;32],uplim:u32,row:u32, ld:u32,rd:u32){
     if row != uplim {
         // *count += 1;
@@ -17,8 +19,7 @@ fn do_n_queen(count:&mut u32, size:usize,level:usize,mut q:[u32;32],uplim:u32,ro
     }
 }
 
-#[warn(dead_code)]
-fn n_queen(size:usize){
+pub(crate) fn n_queen(size:usize){
     let qlist:[u32;32] = [0u32;32];
     let stats:u32 = ((1u64<<size)-1) as u32;
     let row:u32 = 0;
