@@ -1,20 +1,21 @@
-use std::rc::Rc;
+use std::sync::mpsc;
+use std::thread;
 
-fn main(){
-    let a = Node::new(3, Rc::new(None));
-    let b = Node::new(4, Rc::new(Some(&a)));
-    let c = Node::new(5, Rc::new(Some(&a)));
+fn main() {
+    let (tx1, rx) = mpsc::channel();
+    let tx2 = mpsc::Sender::clone(&tx1);
 
-    println!("b is {:#?}",b);
-    println!("a is {:#?}",c);
-}
+    thread::spawn(move || {
+        println!("Sending message from thread 1");
+        tx1.send(String::from("Greeting from thread 1")).unwrap();
+    });
 
-#[derive(Debug)]
-struct  Node {
-    value: u32,
-    next: Rc<Option<Node>>
-}
+    thread::spawn(move || {
+        println!("Sending message from thread 2");
+        tx2.send(String::from("Greeting from thread 2")).unwrap();
+    });
 
-impl Node {
-    fn new(value: u32, next: Rc<Option<Node>>) -> Self { Self { value, next } }
+    for recvd in rx {
+        println!("Received: {}", recvd);
+    }
 }
