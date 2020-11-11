@@ -4,3 +4,4 @@ mod colletions;
 mod trait_knowledge;
 mod fn_closure;
 mod threads;
+mod std_command;

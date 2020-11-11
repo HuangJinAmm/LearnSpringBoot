@@ -1,3 +1,4 @@
+#[allow(dead_code)]
 fn love(s:String) {
     let mut sl : Vec<String> = Vec::new();
     let v : Vec<char> = s.chars().collect(); 

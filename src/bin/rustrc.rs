@@ -1,7 +1,17 @@
-use std::sync::mpsc;
+use std::{process::Command, sync::mpsc};
 use std::thread;
 
 fn main() {
+    let a = &String::from("string");
+    let b = a.clone();
+    println!("{}",a);
+    println!("{}",b);
+    println!("{}",&a);
+    println!("{}",&b);
+}
+
+#[allow(dead_code)]
+fn thread_mode() {
     let (tx1, rx) = mpsc::channel();
     let tx2 = mpsc::Sender::clone(&tx1);
 
