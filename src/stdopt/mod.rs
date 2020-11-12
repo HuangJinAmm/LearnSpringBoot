@@ -5,3 +5,5 @@ mod trait_knowledge;
 mod fn_closure;
 mod threads;
 mod std_command;
+mod quiz;
+mod generisc_const;
