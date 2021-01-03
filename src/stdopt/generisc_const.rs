@@ -3,7 +3,7 @@
 use core::ops::Add;
 use core::marker::PhantomData;
 
-trait LengthType<const F: f64> {}
+trait LengthType<const F: i64> {}
 
 #[derive(Debug, Clone, Copy)]
 struct Length<const F: f64>(f64, PhantomData<dyn LengthType<F>>);
