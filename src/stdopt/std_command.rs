@@ -15,26 +15,22 @@ macro_rules! aprint {
 }
 
 struct ExcutedCommand {
-    name:String,
-    args : Vec<String>
+    name: String,
+    args: Vec<String>,
 }
 
 impl ExcutedCommand {
-
-    fn new(name:String,args : Vec<String>) -> Self{
-        ExcutedCommand{
-            name,
-            args
-        }
+    fn new(name: String, args: Vec<String>) -> Self {
+        ExcutedCommand { name, args }
     }
 
     fn excute(&self) -> String {
-       let cmd = Command::new(&self.name)
-        .args(&self.args)
-        .output()
-        .expect("failed to execute process");
-       let result = cmd.stdout;
-       String::from_utf8_lossy(&result).to_string()
+        let cmd = Command::new(&self.name)
+            .args(&self.args)
+            .output()
+            .expect("failed to execute process");
+        let result = cmd.stdout;
+        String::from_utf8_lossy(&result).to_string()
     }
 }
 
@@ -42,11 +38,11 @@ impl ExcutedCommand {
 mod tests {
 
     #[test]
-    fn test_command(){
+    fn test_command() {
         use super::*;
         let cmd = astring!("adb");
         let arg = astring!("help");
-        let c = ExcutedCommand::new(cmd,vec![arg] );
+        let c = ExcutedCommand::new(cmd, vec![arg]);
         aprint!(c.excute());
     }
-}   
+}

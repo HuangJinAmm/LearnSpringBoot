@@ -1,5 +1,5 @@
 #[cfg(test)]
-mod tests{
+mod tests {
 
     #[test]
     fn test_q24() {
@@ -7,15 +7,14 @@ mod tests{
         const K: u8 = 2;
         macro_rules! m {
             () => {
-                print!("{}==========={}",x,K);
+                print!("{}==========={}", x, K);
             };
         }
 
         {
             let x: u8 = 3;
             const K: u8 = 4;
-             m!();
-             
+            m!();
         }
     }
 }

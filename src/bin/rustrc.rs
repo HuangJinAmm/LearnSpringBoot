@@ -1,13 +1,13 @@
-use std::{process::Command, sync::mpsc};
 use std::thread;
+use std::{process::Command, sync::mpsc};
 
 fn main() {
     let a = &String::from("string");
     let b = a.clone();
-    println!("{}",a);
-    println!("{}",b);
-    println!("{}",&a);
-    println!("{}",&b);
+    println!("{}", a);
+    println!("{}", b);
+    println!("{}", &a);
+    println!("{}", &b);
 }
 
 #[allow(dead_code)]

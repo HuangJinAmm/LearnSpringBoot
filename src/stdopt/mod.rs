@@ -1,9 +1,9 @@
-mod format_print;
-mod overload_add;
 mod colletions;
-mod trait_knowledge;
 mod fn_closure;
-mod threads;
-mod std_command;
-mod quiz;
+mod format_print;
 mod generisc_const;
+mod overload_add;
+mod quiz;
+mod std_command;
+mod threads;
+mod trait_knowledge;

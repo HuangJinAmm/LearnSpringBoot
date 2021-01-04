@@ -15,7 +15,7 @@ impl Trait for bool {
 }
 
 #[cfg(test)]
-mod tests{
+mod tests {
 
     use super::*;
     #[test]

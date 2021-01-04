@@ -46,10 +46,12 @@ fn format_print() {
     println!("{0}, this is {1}. {1}, this is {0}", "Alice", "Bob");
 
     // 可以使用命名参数。
-    println!("{subject} {verb} {object}",
-             object="the lazy dog",
-             subject="the quick brown fox",
-             verb="jumps over");
+    println!(
+        "{subject} {verb} {object}",
+        object = "the lazy dog",
+        subject = "the quick brown fox",
+        verb = "jumps over"
+    );
 
     // 可以在 `:` 后面指定特殊的格式。
     println!("{} of {:b} people know binary, the other half don't", 1, 2);
@@ -83,28 +85,27 @@ fn format_print() {
 
     // Hello {next arg ("x")} is {second of next two args (0.01) with precision
     //                          specified in first of next two args (5)}
-    println!("Hello {} is {:.*}",    "x", 5, 0.01);
+    println!("Hello {} is {:.*}", "x", 5, 0.01);
 
     // Hello {next arg ("x")} is {arg 2 (0.01) with precision
     //                          specified in its predecessor (5)}
-    println!("Hello {} is {2:.*}",   "x", 5, 0.01);
+    println!("Hello {} is {2:.*}", "x", 5, 0.01);
 
     // Hello {next arg ("x")} is {arg "number" (0.01) with precision specified
     //                          in arg "prec" (5)}
     println!("Hello {} is {number:.prec$}", "x", prec = 5, number = 0.01);
     // 你可以按指定宽度来右对齐文本。
     // 下面语句输出 "     1"，5 个空格后面连着 1。
-    for i in 1..5{
-        println!("{number:width$}", number=i, width=i);
+    for i in 1..5 {
+        println!("{number:width$}", number = i, width = i);
     }
-    println!("{number:>width$}", number=1, width=6);
-    println!("{number:<width$}", number=1, width=6);
+    println!("{number:>width$}", number = 1, width = 6);
+    println!("{number:<width$}", number = 1, width = 6);
 
     // 你可以在数字左边补 0。下面语句输出 "000001"。
-    println!("{number:>0width$}", number=1, width=6);
+    println!("{number:>0width$}", number = 1, width = 6);
 
-    
-    println!("My name is {0}, {1} {0}", "Bond","James");
+    println!("My name is {0}, {1} {0}", "Bond", "James");
 
     println!("Hello {:^15}!", format!("{:?}", Some("hi")));
 
@@ -124,8 +125,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_format(){
+    fn test_format() {
         format_print();
     }
-
 }

@@ -8,14 +8,13 @@
 //     type_id: TypeId,
 //      attributes: HashMap<&'static str, AttributeGetter>
 //  }
- 
+
 //  struct AttributeGetter(Arc<dyn Fn(&Instance) -> SomeValue>);
- 
+
 //  struct SomeValue;
 
 //  trait SomeTrait{
 
- 
 //  impl AttributeGetter {
 //     pub fn new<T, F, R>(f: F) -> Self
 //     where
@@ -42,12 +41,12 @@
 //      }
 
 //  }
- 
+
 //  /// An instance of a class
 //  struct Instance {
 //      inner: Arc<dyn Any>, // `Arc` because we don't need/want mutability
 //  }
- 
+
 //  impl Instance {
 //      /// Construct a new `Instance` from a type that
 //      /// implements `Any` (i.e. any sized type).

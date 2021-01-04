@@ -1,5 +1,5 @@
-use std::sync::mpsc::{Sender, Receiver};
 use std::sync::mpsc;
+use std::sync::mpsc::{Receiver, Sender};
 use std::thread;
 
 static NTHREADS: i32 = 10;

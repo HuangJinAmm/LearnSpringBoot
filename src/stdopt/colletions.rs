@@ -1,15 +1,15 @@
 #![allow(dead_code)]
 
 #[cfg(test)]
-mod tests{
+mod tests {
     #[test]
     fn test_array() {
-        let mut a:[i32;3] = [0;3];
+        let mut a: [i32; 3] = [0; 3];
         a[1] = 1;
         a[2] = 2;
 
-        for x in &a{
-            print!("{}",x)
+        for x in &a {
+            print!("{}", x)
         }
     }
 

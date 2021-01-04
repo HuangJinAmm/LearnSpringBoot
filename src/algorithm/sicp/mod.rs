@@ -1,2 +1,2 @@
-mod n_sqrt;
 mod factorial;
+mod n_sqrt;

@@ -1,7 +1,7 @@
 #![feature(const_generics)]
 
-use core::ops::Add;
 use core::marker::PhantomData;
+use core::ops::Add;
 
 trait LengthType<const F: i64> {}
 
@@ -10,7 +10,7 @@ struct Length<const F: f64>(f64, PhantomData<dyn LengthType<F>>);
 
 type Meter = Length<1.0>;
 type Mm = Length<1000.0>;
-type Inch = Length<{1000.0/25.4}>;
+type Inch = Length<{ 1000.0 / 25.4 }>;
 
 impl<const F1: f64> Length<F1> {
     fn new(val: f64) -> Self {
@@ -50,13 +50,13 @@ mod tests {
         let m1 = Meter::new(1.0);
         let inch3 = Inch::new(3.0);
         let mm40 = Mm::new(40.0);
-    
+
         let a = m1 + inch3._into();
         println!("m1 + inch3 = {} m", a.value());
-    
+
         let b = mm40 + inch3._into();
         println!("mm40 + inch3 = {} mm", b.value());
-    
+
         let c = mm40 + m1._into();
         println!("mm40 + m1 = {} mm", c.value());
     }
