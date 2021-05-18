@@ -1,4 +1,4 @@
-#![feature(const_generics)]
+/* #![feature(const_generics)]
 
 use core::marker::PhantomData;
 use core::ops::Add;
@@ -61,3 +61,4 @@ mod tests {
         println!("mm40 + m1 = {} mm", c.value());
     }
 }
+ */
