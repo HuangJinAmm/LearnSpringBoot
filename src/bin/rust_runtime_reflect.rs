@@ -69,7 +69,7 @@
 //         class.get_attribute(self, name)
 //     }
 // }
-// fn main(){
+fn main(){
 //     struct Foo {}
 //     struct Bar {}
 
@@ -84,4 +84,4 @@
 //     // let mut recovered: Box<String> = any.downcast().expect("failed conversion");
 //     // recovered.make_ascii_uppercase();
 //     // println!("{}", recovered);
-// }
+}
