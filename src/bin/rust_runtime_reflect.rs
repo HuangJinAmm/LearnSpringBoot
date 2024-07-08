@@ -69,19 +69,19 @@
 //         class.get_attribute(self, name)
 //     }
 // }
-fn main(){
-//     struct Foo {}
-//     struct Bar {}
+fn main() {
+    //     struct Foo {}
+    //     struct Bar {}
 
-//     let foo_class: Class = Class::new::<Foo>();
-//     let bar_class: Class = Class::new::<Bar>();
-//     let foo_instance: Instance = Instance::new(Foo {});
+    //     let foo_class: Class = Class::new::<Foo>();
+    //     let bar_class: Class = Class::new::<Bar>();
+    //     let foo_instance: Instance = Instance::new(Foo {});
 
-//     println!("{:?}",foo_instance.instance_of(&foo_class));
-//     println!("{:?}",!foo_instance.instance_of(&bar_class));
-//     // let s:String = "hello world".to_string();
-//     // let any: Box<dyn Any> = Box::new(s);
-//     // let mut recovered: Box<String> = any.downcast().expect("failed conversion");
-//     // recovered.make_ascii_uppercase();
-//     // println!("{}", recovered);
+    //     println!("{:?}",foo_instance.instance_of(&foo_class));
+    //     println!("{:?}",!foo_instance.instance_of(&bar_class));
+    //     // let s:String = "hello world".to_string();
+    //     // let any: Box<dyn Any> = Box::new(s);
+    //     // let mut recovered: Box<String> = any.downcast().expect("failed conversion");
+    //     // recovered.make_ascii_uppercase();
+    //     // println!("{}", recovered);
 }

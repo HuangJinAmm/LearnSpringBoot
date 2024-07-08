@@ -1,4 +1,4 @@
-use std::{cell::{Cell, RefCell}};
+use std::cell::{Cell, RefCell};
 
 #[derive(Debug)]
 struct MyStr {
@@ -7,25 +7,25 @@ struct MyStr {
 
 #[derive(Debug)]
 struct MyCellStr {
-    str:Cell<u32>,
+    str: Cell<u32>,
 }
 
 #[derive(Debug)]
 struct MyRefCellStr {
-    str:RefCell<String>,
+    str: RefCell<String>,
 }
 
 fn main() {
     /* =================
-    * 可变绑定和不可变绑定
-    * ================= */
+     * 可变绑定和不可变绑定
+     * ================= */
     //不可变绑定
-    let immutBind  = MyStr {
-        str: String::from("test immut") 
+    let immutBind = MyStr {
+        str: String::from("test immut"),
     };
     //可变绑定
-    let mut mutBind  = MyStr {
-        str: String::from("test immut") 
+    let mut mutBind = MyStr {
+        str: String::from("test immut"),
     };
     // 不可变绑定不能出借 可变的权限
     // let t = &mut immutBind;
@@ -36,18 +36,14 @@ fn main() {
     println!("{:?}", t);
 
     /* =================
-    * 内部可变和引用
-    * ================= */
+     * 内部可变和引用
+     * ================= */
 
-    let tc = MyCellStr {
-        str:Cell::new(0)
-    };
+    let tc = MyCellStr { str: Cell::new(0) };
 
     let tcell = &tc.str;
-   
+
     tcell.set(1);
 
-    println!("{:#?}",tc);
-    
-    
+    println!("{:#?}", tc);
 }

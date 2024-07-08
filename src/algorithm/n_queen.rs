@@ -29,10 +29,10 @@ fn do_n_queen(
             );
         }
     } else {
-        // for r in 0..size {
-        //     println!("{:>0width$b}",q[r],width=size);
-        // }
-        // println!("==================================");
+        for r in 0..size {
+            println!("{:>0width$b}", q[r], width = size);
+        }
+        println!("==================================");
         *count += 1;
     }
 }
@@ -55,6 +55,6 @@ mod tests {
 
     #[test]
     fn test_n_q() {
-        n_queen(16);
+        n_queen(8);
     }
 }

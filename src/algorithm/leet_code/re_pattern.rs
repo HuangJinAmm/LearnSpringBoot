@@ -1,12 +1,11 @@
-struct Solution{}
+struct Solution {}
 
 impl Solution {
+    pub fn is_match(s: String, p: String) -> bool {
+        let p_chars: Vec<char> = p.chars().collect();
+        let s_chars: Vec<char> = s.chars().collect();
 
-    pub fn is_match(s:String,p:String) -> bool {
-        let p_chars:Vec<char> = p.chars().collect();
-        let s_chars:Vec<char>  = s.chars().collect();
-        
-        let mut dp  = vec![vec![false;p.len() + 1];s.len() + 1];
+        let mut dp = vec![vec![false; p.len() + 1]; s.len() + 1];
         dp[0][0] = true;
 
         for i in 0..p_chars.len() {
@@ -23,7 +22,7 @@ impl Solution {
                     dp[j][i] = dp[j - 1][i - 1];
                 } else {
                     if p_chars[i - 1] == '*' {
-                        if p_chars[i - 2] == s_chars[j - 1] || p_chars[i - 2] == '.'{
+                        if p_chars[i - 2] == s_chars[j - 1] || p_chars[i - 2] == '.' {
                             dp[j][i] = dp[j - 1][i] || dp[j][i - 2];
                         } else {
                             dp[j][i] = dp[j][i - 2];
@@ -46,7 +45,7 @@ mod tests {
 
     #[test]
     fn test_re() {
-        let s = String::from("mississippi"); 
+        let s = String::from("mississippi");
         let p = String::from("mis*is*p*.");
         let result = Solution::is_match(s, p);
         println!("{:?}", result);

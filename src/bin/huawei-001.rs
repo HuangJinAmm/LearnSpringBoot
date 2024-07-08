@@ -9,7 +9,7 @@ fn main() {
             if input_num == 0 {
                 break;
             }
-            print!("{}\n", input_num/2);
+            print!("{}\n", input_num / 2);
         }
     }
 }

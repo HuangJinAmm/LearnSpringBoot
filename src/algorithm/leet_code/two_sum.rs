@@ -17,7 +17,6 @@ impl Solution {
         }
         panic!("not found!")
     }
-
 }
 
 #[cfg(test)]
